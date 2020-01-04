@@ -4,74 +4,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avellar Media</title>
+    <title>A Encadernadora</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,900&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="assets/js/typewriter.js"></script>
+    <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            z-index: 100;
+        }
+
+        .float:hover {
+            color: #fff
+        }
+
+        .my-float {
+            margin-top: 16px;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar">
+    <a href="https://api.whatsapp.com/send?phone=5579981176641&text=Opa!+Aqui+%C3%A9+o+D%C3%A9rick!+Antes+de+tudo,+salve+o+meu+contato.+Obrigado!+%E2%98%BA"
+        class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
+
+    <nav class="navegacao">
         <a href="#">
-            <img src="assets/img/logo.png" alt="logo">
+            <img src="assets/img/logo.png" alt="logo" style="margin-top: 10px;">
         </a>
 
-        <button class="burguer-button" type="button">=</button>
+        <button class="burguer-button" type="button" onclick="openNav()">=</button>
     </nav>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
+        <a class="menu-item" href="index.html">inicio</a>
+        <a class="menu-item" href="institucional.html">o que fazemos</a>
+        <a class="menu-item"
+            href="https://api.whatsapp.com/send?phone=5579981176641&text=Opa!+Aqui+%C3%A9+o+D%C3%A9rick!+Antes+de+tudo,+salve+o+meu+contato.+Obrigado!+%E2%98%BA"
+            style="color: #00c9b1" target="blank">vamos conversar?</a>
+        <a class="menu-item" href="politica-de-privacidade.html">privacidade</a>
+    </div>
+
     <header>
-        <video muted="1" autoplay="1" webkit-playsinline="1" playsinline="1" loop="1"
-            data-defer='["https://avellarmedia.com/wp-content/themes/theme-avellar-media/components/organism/hero/avellar-media-video-home-mobile.webm", "https://avellarmedia.com/wp-content/themes/theme-avellar-media/components/organism/hero/avellar-media-video-home-mobile.mp4"]'
-            data-sourceType='["video/webm", "video/mp4"]'>
-            <source
-                src="https://avellarmedia.com/wp-content/themes/theme-avellar-media/components/organism/hero/avellar-media-video-home-desktop.webm"
-                type="video/webm">
-            <source
-                src="https://avellarmedia.com/wp-content/themes/theme-avellar-media/components/organism/hero/avellar-media-video-home-mobile.mp4"
-                type="video/mp4">
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
         </video>
-
-        <h2 class="title">Insanamente
-            <span id="app"></span><br>
-            <span class="subtitle">Agência Full-Service</span>
-        </h2>
-
-        <a href="#sobre" class="sobre-scrolling">
-            <span><<<<<<<<<<<</span><br>
-            <span>Saiba mais</a></span>
+        <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <h1 class="display-3 title">Insanamente
+                        <span id="app"></span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <a href="#customers" class="sobre-scrolling">
+            <span class="arrows">
+                <<<<<<<<<<</span> <br>
+                    <span>Saiba mais</span>
+        </a>
     </header>
 
+    <div id="customers" class="customers">
+        <h2>Quem trabalha com a gente</h2>
+        <ul class="customers-list">
+            <li>
+                <img src="assets/img/Facar.png" alt="" class="customer">
+            </li>
+            <li>
+                <img src="assets/img/Faser.png" alt="" class="customer">
+            </li>
+            <li>
+                <img src="assets/img/JeA-Assessoria-Contábil.png" alt="" class="customer">
+            </li>
+            <li>
+                <img src="assets/img/JGomes.png" alt="" class="customer">
+            </li>
+            <li>
+                <img src="assets/img/João-Izaias-Contabilidade.png" alt="" class="customer">
+            </li>
+            <li>
+                <img src="assets/img/Sergeco.png" alt="" class="customer">
+            </li>
+            <li>
+                <img src="assets/img/SóContábil.png" alt="" class="customer">
+            </li>
+            <li>
+                <img src="assets/img/Tyresoles.png" alt="" class="customer">
+            </li>
+            <li>
+                <img src="assets/img/UFS.png" alt="" class="customer">
+            </li>
+        </ul>
+    </div>
+
+    <section class="services">
+        <div class="shadow-title">
+            <div class="shadow" style="box-shadow: none !important;">what</div>
+            <h2 class="title">o que<br> fazemos?</h2>
+        </div>
+
+        <a href="encadernacao.html" class="card"
+            style="margin-top: 70px; background: url('assets/img/encadernação.png');">
+            <h3 class="title">Encadernação</h3>
+            <button class="plus">+</button>
+        </a>
+        <a href="impressao.html" class="card"
+            style="bottom: 80px; margin-left: 200px; background: url('assets/img/impressao.png');">
+            <h3 class="title">Impressão</h3>
+            <button class="plus">+</button>
+        </a>
+        <a href="restauracao.html" class="card"
+            style="margin-top: 90px; background: url('assets/img/restauracao.png');">
+            <h3 class="title">Restauração</h3>
+            <button class="plus">+</button>
+        </a>
+        <a href="gravacao.html" class="card"
+            style="bottom: 80px; margin-left: 200px; background: url('assets/img/gravacao.png');">
+            <h3 class="title">Gravação</h3>
+            <button class="plus">+</button>
+        </a>
+        <a href="analise.html" class="card"
+            style="margin-top: 90px; background: url('assets/img/analise-correcao.png');">
+            <h3 class="title">Análise</h3>
+            <button class="plus">+</button>
+        </a>
+    </section>
+
+    <section class="about">
+        <h2 class="title">Quem somos?</h2>
+
+        <p>A Encadernadora Dérick Gatto é uma empresa inovadora especializada na
+            solução de problemas dos nossos clientes.</p>
+
+        <p>Temos orgulho em dizer que A Encadernadora Dérick Gatto já colaborou com
+            milhares de alunos e empresários, de diversas áreas, a alcançarem os seus
+            objetivos por meio de nossos produtos! Somos apaixonados por gerar
+            resultados para os nossos clientes, pois isso nos leva a trabalhar em
+            constantes melhorias e aperfeiçoamentos de técnicas.</p>
+
+        <p>Nós fazemos muito mais do que encadernação. Nós fazemos a diferença na
+            sua vida!</p>
+
+        <h2 class="title">Nossa equipe</h2>
+
+        <p>Nossa equipe é composta por especialistas no ramo, um time integrado de
+            jovens com sede de aprender e executar.</p>
+
+        <p>É essa equipe que tornou A Encadernadora Dérick Gatto a melhor gráfica no
+            segmento de encadernação de Sergipe.</p>
+
+        <h2 class="title" style="font-size: 1.7rem;">Os 4 Pilares A Encadernadora Dérick Gatto</h2>
+
+        <ul class="values">
+            <li>
+                <img src="assets/img/inovacao.png" alt="nossos valores - inovação">
+                <span>Inovação</span>
+            </li>
+            <li>
+                <img src="assets/img/velocidade.png" alt="nossos valores - velocidade">
+                <span>Velocidade</span>
+            </li>
+            <li>
+                <img src="assets/img/qualidade.png" alt="nossos valores - qualidade">
+                <span>Qualidade</span>
+            </li>
+            <li>
+                <img src="assets/img/resultados.png" alt="nossos valores - resultados">
+                <span>Resultados</span>
+            </li>
+        </ul>
+
+        <h3 class="subtitle" style="margin-bottom: 20px;">_onde nos encontrar</h3>
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d979.4450122854222!2d-37.092529170786406!3d-10.90431368262416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71ab307b71e83e7%3A0x4888cec9b653217a!2sA%20Encadernadora%20-%20D%C3%A9rick%20Gatto!5e0!3m2!1spt-BR!2sbr!4v1578006018688!5m2!1spt-BR!2sbr"
+            width="718" height="450" frameborder="0" style="border:0; margin-bottom: 110px;"
+            allowfullscreen=""></iframe>
+
+        <!-- <ul class="cities">
+            <li style="margin-left: 60px;"></li>
+            <div class="shadowed-text">
+                <div class="shadow">SE</div>
+                <div class="text">aracaju</div>
+            </div>
+            </li>
+        </ul> -->
+    </section>
+
+    <section class="contact">
+        <div class="shadow-title">
+            <div class="shadow" style="box-shadow: none !important;">talk</div>
+            <h2 class="title">vamos<br> conversar?</h2>
+        </div>
+        <a href="https://api.whatsapp.com/send?phone=5579981176641&text=Opa!+Aqui+%C3%A9+o+D%C3%A9rick!+Antes+de+tudo,+salve+o+meu+contato.+Obrigado!+%E2%98%BA"
+            target=blank class="call-contact">
+            <span class="icon">></span>
+            fale com a gente
+        </a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-menu">
+            <section class="copyright">
+                <div class="logo-wrapper">
+                    <img src="assets/img/logo-footer.png" alt="logo" class="logo-footer">
+                </div>
+                <p class="footer-copyright">Copyright<sup>©</sup> 2019 A Encadernadora Dérick Gatto.<br>
+                    Todos os direitos reservados.</p>
+                <p class="footer-copyright"><strong>Criado com <span style="color: red">❤</span> pelo time da a
+                        encadernadora Dérick Gatto</strong>
+                </p>
+            </section>
+            <section class="menu-footer">
+                <ul>
+                    <li class="menu-item"><a href="#">inicio</a></li>
+                    <li class="menu-item"><a href="institucional.html">o que fazemos</a></li>
+                    <li class="menu-item"><a href="politica-de-privacidade.html">privacidade</a></li>
+                </ul>
+            </section>
+        </div>
+
+    </footer>
+    <div class="social-links">
+        <ul>
+            <li class="links"><a href="https://www.instagram.com/aencadernadora" target="blank">insta</a></li>
+            <li class="links"><a href="https://www.facebook.com/aencadernadoracarlosgatto" target="blank">face</a></li>
+            <li class="links"><a href="https://www.linkedin.com/in/d%C3%A9rick-gatto-13b892161"
+                    target="blank">linkedin</a></li>
+        </ul>
+    </div>
 </body>
 
 <script type="text/javascript">
-    // MUDAR MENU DE COR
+    // Change menu color on scroll
     jQuery(function () {
         jQuery(window).scroll(function () {
-            if (jQuery(this).scrollTop() > 930) {
-                $(".navbar").css('background-color', '#131f28');
+            if (jQuery(this).scrollTop() > 750) {
+                $(".navegacao").css('background-color', '#131f28');
             } else {
-                $(".navbar").css('background-color', 'transparent');
+                $(".navegacao").css('background-color', 'transparent');
             }
         });
     });
 
-    // TORNAR MENU RETRÁTIL
+    // Make retratable menu
     var lastScrollTop = 0;
     $(window).scroll(function (event) {
         var st = $(this).scrollTop();
         if (st === 0) {
-            $('.navbar').slideDown("fast");
+            $('.navegacao').slideDown("fast");
         } else if (st > lastScrollTop && st > 930) {
-            $('.navbar').slideUp("fast");
+            $('.navegacao').slideUp("fast");
         } else {
-            $('.navbar').slideDown("fast");
+            $('.navegacao').slideDown("fast");
         }
         lastScrollTop = st;
     });
 
-    //  TYPEWRITER TÍTULO
+    //  Typewritter title
     var app = document.getElementById('app');
 
     var typewriter = new Typewriter(app, {
@@ -81,15 +296,39 @@
     });
 
     typewriter
-        .typeString('idiotas')
+        .typeString('criativo')
         .pauseFor(2500)
         .deleteAll()
-        .typeString('retardados')
+        .typeString('solucionador')
         .pauseFor(2500)
         .deleteAll()
-        .typeString('imbecis')
+        .typeString('inovador')
+        .pauseFor(2500)
+        .deleteAll()
+        .typeString('disruptivo')
+        .pauseFor(2500)
+        .deleteAll()
+        .typeString('efetivo')
+        .pauseFor(2500)
+        .deleteAll()
+        .typeString('social')
+        .pauseFor(2500)
+        .deleteAll()
+        .typeString('digital')
+        .pauseFor(2500)
+        .deleteAll()
+        .typeString('nordestinos')
         .pauseFor(2500)
         .start()
+
+    // Toggle vertical menu
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "750px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+    }
 </script>
 
 </html>

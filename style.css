@@ -1,3 +1,4 @@
+/* RESET CSS */
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +9,12 @@
 }
 
 body {
-    font-family: "Raleway", sans-serif;
+    font-family: "Raleway", sans-serif !important;
+    height: 3993px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 a {
@@ -16,23 +22,32 @@ a {
     color: inherit;
 }
 
-.navbar {
+a:hover {
+    text-decoration: none !important;
+}
+
+li {
+    list-style: none;
+}
+
+/* MENU */
+.navegacao {
     padding: 10px 5%;
     background-color: transparent;
     z-index: 99;
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    height: 60px;
+    height: 70px;
 }
 
-.navbar a,
-.navbar img {
-    height: 100%;
+.navegacao a,
+.navegacao img {
+    height: 40px;
 }
 
 .burguer-button {
@@ -40,41 +55,68 @@ a {
     border: 0;
     cursor: pointer;
     color: #fff;
-    font-size: 2.5rem;
+    font-size: 4rem;
     line-height: 2rem;
+    font-family: "Raleway", sans-serif;
 }
 
+/* HEADER VÍDEO */
 header {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
-    background-color: #131f28;
+    background-color: black;
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
 }
 
 header video {
     position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: -10;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
 
-.title {
-    font-size: 70px;
-    color: #fff;
+header .container {
+    position: relative;
     z-index: 2;
-    font-weight: 700;
-    text-align: center;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+header .title {
+    font-weight: 600;
+}
+
+@media (pointer: coarse) and (hover: none) {
+    header {
+        background: url("https://source.unsplash.com/XT5OInaElMw/1600x900")
+            black no-repeat center center scroll;
+    }
+    header video {
+        display: none;
+    }
 }
 
 .subtitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
     display: block;
     font-family: "Roboto", sans-serif;
     margin-top: 10px;
@@ -82,17 +124,463 @@ header video {
 
 .sobre-scrolling {
     position: absolute;
-    right: 10px;
-    bottom: 100px;
+    right: 120px;
+    bottom: 80px;
     transform: rotate(-90deg);
     color: #00c9b1;
     font-size: 1rem;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: 700;
+    z-index: 10;
+}
+
+.sobre-scrolling:hover {
+    color: #00c9b1;
+    text-decoration: none;
+}
+
+.sobre-scrolling:hover .arrows {
+    -webkit-transform: translateX(-25%);
+    transform: translateX(-25%);
 }
 
 .arrows {
+    display: inline-block;
     transition: transform 0.5s ease, -webkit-transform 0.5s ease,
         -moz-transform 0.5s ease, -o-transform 0.5s ease;
+}
+
+/* SIDEBAR MENU */
+.sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right: 0;
+    background-color: #131f28;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 90px;
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+    z-index: 999;
+}
+
+/* The sidebar links */
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.menu-item {
+    margin-top: 25px;
+    margin-left: 110px;
+    width: fit-content;
+}
+
+.small {
+    font-size: 1.25rem !important;
+    margin-top: 10px;
+}
+
+.menu-item:hover {
+    text-decoration: underline !important;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 150px;
+    font-size: 36px;
+    margin-left: 50px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+    .sidebar a {
+        font-size: 18px;
+    }
+}
+
+/* CUSTOMERS SECTION */
+.customers {
+    height: 134px;
+    background-color: #131f28;
+    padding-top: 34px;
+}
+
+.customers h2 {
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #c6c6c6;
+    width: 100%;
+    text-align: center;
+    /* margin-top: 34px; */
+    margin-bottom: 10px;
+}
+
+.customers-list {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.customers-list li {
+    margin: 0 15px;
+    padding: 15px;
+}
+
+.customers-list img {
+    height: 3rem;
+}
+
+/* SERVICES SECTION */
+.services {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.services .shadow-title {
+    height: 515px;
+}
+
+.services .shadow {
+    font-size: 19rem;
+    font-weight: 900;
+    color: #e2e2e2;
+    transform: translateX(-28%);
+}
+
+.services .shadow-title .title {
+    font-weight: 800;
+    font-size: 4rem;
+    position: relative;
+    bottom: 200px;
+}
+
+/* CARDS */
+.card {
+    max-width: 550px;
+    min-height: 340px;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100% !important;
+    background-position: center center !important;
+    display: inline-block !important;
+    width: 100%;
+    transition: transform 0.5s ease, background-color 0.8s ease,
+        background-size 0.5s ease, color 0.8s ease, -webkit-transform 0.5s ease,
+        -moz-transform 0.5s ease, -o-transform 0.5s ease,
+        -webkit-background-size 0.5s ease, -moz-background-size 0.5s ease;
+}
+
+.card:hover {
+    transform: scale(0.95);
+    background-size: 120% 120% !important;
+    transition: transform 0.5s ease, background-color 0.8s ease,
+        background-size 0.5s ease, color 0.8s ease, -webkit-transform 0.5s ease,
+        -moz-transform 0.5s ease, -o-transform 0.5s ease,
+        -webkit-background-size 0.5s ease, -moz-background-size 0.5s ease;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(236, 224, 215, 0) 0,
+        rgba(236, 224, 215, 0.4) 100%
+    );
+}
+
+.card .title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 900;
+    font-family: "Roboto", sans-serif;
+    color: #131f28;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(-20%, 70%);
+}
+
+.card button.plus {
+    width: fit-content;
+    font-size: 2rem;
+    background: transparent;
+    color: #00c9b1;
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    z-index: 2;
+    pointer-events: none;
+    font-weight: 700;
+    font-family: "Arial";
+}
+
+/* ABOUT SECTION */
+.about {
+    width: 70%;
+    margin: 100px auto 0;
+}
+
+.about .title {
+    font-weight: 800;
+    font-size: 3rem;
+    color: #000;
+    margin-bottom: 35px;
+}
+
+.about p {
+    font-family: "Raleway", sans-serif;
+    max-width: 55%;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    margin-top: 25px;
+}
+
+.about .subtitle {
+    font-family: "Raleway", sans-serif;
+    font-size: 2rem;
+    color: #555;
+    font-weight: 800;
+    margin-top: 50px;
+}
+
+/* .about .shadow {
+    position: relative;
+    display: inline-block;
+    font-size: 8rem;
+    text-shadow: -1px -1px 0 #00c9b1, 1px -1px 0 #00c9b1, -1px 1px 0 #00c9b1,
+        1px 1px 0 #00c9b1;
+    color: #ffffff;
+    font-weight: 900;
+    box-shadow: none !important;
+}
+
+.about .text {
+    font-size: 3.585rem;
+    font-weight: 900;
+    text-transform: lowercase;
+    letter-spacing: 3px;
+    color: #000;
+    position: relative;
+    bottom: 140px;
+    right: 4px;
+}
+
+.cities {
+    display: flex;
+    align-items: center;
+} */
+
+.about .values {
+    display: flex;
+}
+
+.about .values li {
+    margin-right: 60px;
+}
+
+.about .values img {
+    display: block;
+    height: 40px;
+    margin: 0 auto 10px;
+}
+
+/* CONTACT SECTION */
+.contact {
+    width: 70%;
+    height: 450px;
+    margin: 0 auto;
+    position: relative;
+    bottom: 150px;
+    margin-bottom: 100px;
+}
+
+.contact .shadow {
+    font-size: 22rem;
+    font-weight: 900;
+    color: #e2e2e2;
+    transform: translateX(-23%);
+}
+
+.contact .shadow-title .title {
+    font-weight: 800;
+    font-size: 4rem;
+    position: relative;
+    bottom: 200px;
+}
+
+.contact .shadow-title {
+    height: 100px;
+}
+
+.call-contact {
+    position: absolute;
+    right: -40px;
+    bottom: 35px;
+    font-size: 1.2rem;
+    border: 3px solid #131f28;
+    padding: 30px;
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 600px;
+    font-family: "Roboto", sans-serif;
+    height: 89px;
+    transition: background 0.2s;
+}
+
+.icon {
+    display: inline-block;
+    width: 2rem;
+    max-width: 0;
+    opacity: 0;
+    transition: max-width 0.3s ease, opacity 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.call-contact:hover {
+    color: inherit;
+}
+
+.call-contact:hover .icon {
+    max-width: 2rem;
+    opacity: 1;
+    text-decoration: none;
+}
+
+/* FOOTER */
+.footer {
+    padding: 50px 280px;
+    position: relative;
+    bottom: 140px;
+    background-color: #e2e2e2;
+}
+
+.footer-menu {
+    display: flex;
+}
+
+.logo-wrapper {
+    width: 500px;
+    height: 45px;
+}
+
+.logo-footer {
+    max-width: 100%;
+    height: 100%;
+}
+
+.copyright {
+    width: 540px;
+    height: 160px;
+}
+
+.footer-copyright {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-top: 20px;
+    color: #000;
+}
+
+.menu-footer {
+    border-left: 3px solid #000;
+}
+
+.menu-footer ul {
+    height: 164px;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-footer .menu-item {
+    margin-top: 17px;
+}
+
+.menu-footer .menu-item a {
+    color: #131f28;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* SOCIAL LINKS */
+.social-links {
+    position: relative;
+    display: flex;
+    bottom: 140px;
+    background-color: #131f28;
+    padding: 30px 250px;
+}
+
+.social-links .links {
+    margin: 0 30px;
+}
+
+.social-links ul {
+    margin-bottom: 0;
+    display: flex;
+}
+
+.social-links .links a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: "Raleway", sans-serif;
+}
+
+.links a:hover {
+    text-decoration: underline !important;
+}
+
+.footer-copyright strong {
+    text-transform: uppercase;
+    font-weight: 700;
 }
