@@ -264,7 +264,7 @@
     // Change menu color on scroll
     jQuery(function () {
         jQuery(window).scroll(function () {
-            if (jQuery(this).scrollTop() > 750) {
+            if (((jQuery(this).scrollTop() > 750) && ($(window).width() > 425)) || (($(window).width() <= 425) && (jQuery(this).scrollTop() > 430))) {
                 $(".navegacao").css('background-color', '#131f28');
             } else {
                 $(".navegacao").css('background-color', 'transparent');
@@ -278,7 +278,7 @@
         var st = $(this).scrollTop();
         if (st === 0) {
             $('.navegacao').slideDown("fast");
-        } else if (st > lastScrollTop && st > 930) {
+        } else if (((st > lastScrollTop && st > 930 && $(window).width() > 425)) || (($(window).width() <= 425 && st > lastScrollTop && st > 430))) {
             $('.navegacao').slideUp("fast");
         } else {
             $('.navegacao').slideDown("fast");
@@ -323,11 +323,11 @@
 
     // Toggle vertical menu
     function openNav() {
-        document.getElementById("mySidebar").style.width = "750px";
+        document.getElementById("mySidebar").classList.toggle('open')
     }
 
     function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("mySidebar").classList.toggle('open')
     }
 </script>
 

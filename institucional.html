@@ -122,6 +122,21 @@
             z-index: 2;
             line-height: 1em;
         }
+
+        @media (max-width: 425px) {
+            body {
+                overflow-x: initial;
+            }
+
+            .navegacao {
+                width: 65%
+            }
+
+            .open {
+                width: 65% !important;
+                right: 208px;
+            }
+        }
     </style>
 </head>
 
@@ -253,11 +268,11 @@
 
     // Toggle vertical menu
     function openNav() {
-        document.getElementById("mySidebar").style.width = "750px";
+        document.getElementById("mySidebar").classList.toggle('open')
     }
 
     function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("mySidebar").classList.toggle('open')
     }
 </script>
 

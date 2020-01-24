@@ -43,6 +43,25 @@
         .footer {
             margin-top: 100px;
         }
+
+        @media (max-width: 425px) {
+            body {
+                overflow-x: initial;
+            }
+
+            .navegacao {
+                width: 65%
+            }
+
+            .open {
+                width: 65% !important;
+                right: 210px;
+            }
+
+            .about>.title {
+                font-size: 2.3rem
+            }
+        }
     </style>
 </head>
 
@@ -148,11 +167,11 @@
 
     // Toggle vertical menu
     function openNav() {
-        document.getElementById("mySidebar").style.width = "750px";
+        document.getElementById("mySidebar").classList.toggle('open')
     }
 
     function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("mySidebar").classList.toggle('open')
     }
 </script>
 
