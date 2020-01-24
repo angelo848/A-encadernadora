@@ -647,8 +647,10 @@ header .title {
     }
 
     .customers-list {
-        width: 85%;
+        width: 100%;
         margin: 0;
+        overflow-y: hidden;
+        overflow-x: scroll;
     }
 
     .customers-list li {
