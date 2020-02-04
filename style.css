@@ -11,6 +11,7 @@
 body {
     font-family: "Raleway", sans-serif !important;
     height: 3993px;
+    overflow-x: hidden;
 }
 
 html {
@@ -257,8 +258,7 @@ header .title {
 }
 
 .customers-list {
-    width: 85%;
-    margin: 0 auto;
+    width: 100%;
     display: flex;
 }
 
@@ -268,7 +268,7 @@ header .title {
 }
 
 .customers-list img {
-    height: 3rem;
+    height: 2.9rem;
 }
 
 /* SERVICES SECTION */
